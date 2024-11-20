@@ -44,3 +44,7 @@ luac.out
 builds/
 
 source/libraries/noble/docs/
+
+# Costum ignores
+**/.DS_Store
+*.sublime*

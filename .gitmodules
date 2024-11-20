@@ -1,3 +1,7 @@
 [submodule "Noble Engine"]
 	path = source/libraries/noble
 	url = https://github.com/NobleRobot/NobleEngine.git
+
+[submodule "MrBot Core"]
+    path = source/libraries/core
+    url = https://github.com/Scribilicious/PlaydateCore.git

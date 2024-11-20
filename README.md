@@ -1,3 +1,15 @@
+
+
+# Modified Project Template
+This is a modified version of the “Noble Engine: project template.”
+
+## Changes
+- Added the submodule “Mr. Bot’s Core Libraries,” which features various libraries to make game design more comfortable.
+- Added the modified library **pdParticles** (https://github.com/Scribilicious/pdParticles).
+- Added the library **AnimatedSprite** (https://github.com/Whitebrim/AnimatedSprite).
+- Included a folder named “support” that contains a 1-bit palette for Aseprite.
+- Added three bash scripts for running and compiling your Playdate project.
+
 # Noble Engine: project template
 The official project template for [Noble Engine](https://github.com/NobleRobot/NobleEngine) projects.
 
