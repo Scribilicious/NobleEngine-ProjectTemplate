@@ -15,6 +15,8 @@ function Particle:init(x, y)
     self.decay = 1
     self.particles = {}
     self.colour = playdate.graphics.kColorBlack
+    self.opacity = 1
+    self.ditherType = playdate.graphics.image.kDitherTypeBayer8x8
     self.bounds = {0,0,0,0}
     self.mode = 0
     if self.type == 2 then -- polys
@@ -130,12 +132,22 @@ function Particle:getColor()
     return self.colour
 end
 
-function Particle:setColour(colour)
-    self.colour = colour
+-- opacity
+function Particle:setOpacity(opacity)
+    self.opacity = opacity
 end
 
-function Particle:getColour()
-    return self.colour
+function Particle:getOpacity()
+    return self.opacity
+end
+
+-- opacity
+function Particle:setDitherType(ditherType)
+    self.ditherType = ditherType
+end
+
+function Particle:getOpacity()
+    return self.ditherType
 end
 
 -- bounds
@@ -265,6 +277,7 @@ function ParticleCircle:update()
     local w = playdate.graphics.getLineWidth()
     local c = playdate.graphics.getColor()
     playdate.graphics.setColor(self.colour)
+    playdate.graphics.setStencilPattern(self.opacity, self.ditherType)
     for part = 1, #self.particles, 1 do
         local circ = self.particles[part]
         if circ.thickness < 1 then
@@ -354,6 +367,7 @@ function ParticlePoly:update()
     local w = playdate.graphics.getLineWidth()
     local c = playdate.graphics.getColor()
     playdate.graphics.setColor(self.colour)
+    playdate.graphics.setStencilPattern(self.opacity, self.ditherType)
     for part = 1, #self.particles, 1 do
         local poly = self.particles[part]
         local polygon = {}
@@ -634,4 +648,3 @@ end
 function Particles:total()
     return #particles
 end
-
