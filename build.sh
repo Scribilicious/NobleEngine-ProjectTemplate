@@ -14,5 +14,7 @@ echo "Source path:    $sourcePath"
 echo "Output path:    $outputPath"
 echo ""
 
+bash update-pdxinfo.sh
+
 echo "Compile source..."
 "$compilerPath" -k "$sourcePath" "$outputPath$outputFile"
